@@ -11,15 +11,15 @@ using System.Windows.Forms;
 
 namespace CPSC236FinalProject
 {
-    public partial class AddFriend2 : Form
+    public partial class AddFriend : Form
     {
         Dashboard dashboard;
-        public AddFriend2()
+        public AddFriend()
         {
             InitializeComponent();
         }
 
-        public AddFriend2(Dashboard dash)
+        public AddFriend(Dashboard dash)
         {
             InitializeComponent();
             dashboard = dash;
@@ -35,25 +35,27 @@ namespace CPSC236FinalProject
                 SQLiteCommand cmd = dbConnection.CreateCommand();
                 cmd.CommandText = "SELECT EMAIL FROM user WHERE EMAIL='" + email + "';";
                 SQLiteDataReader dataReader = cmd.ExecuteReader();
-                while (!dataReader.Read())
+                if (!dataReader.HasRows)
                 {
                     errMsg.Text = "Email not found.";
                     return;
                 }
+                dataReader.Close();
                 SQLiteCommand cmd3 = dbConnection.CreateCommand();
                 cmd3.CommandText = "SELECT friend1 from friends WHERE friend1='" + email + "' OR friend2='" + email + "' LIMIT 1;";
                 SQLiteDataReader dataReader2 = cmd3.ExecuteReader();
-                while (dataReader2.Read())
+                if (dataReader2.HasRows)
                 {
                     errMsg.Text = email + " already added as your friend.";
                     return;
                 }
+                dataReader2.Close();
                 SQLiteCommand cmd2 = dbConnection.CreateCommand();
                 cmd2.CommandText = "INSERT INTO friends (friend1,friend2) VALUES ('" + dashboard.User.Email + "','" + email + "');";
                 cmd2.ExecuteNonQuery();
-                this.Close();
-                dbConnection.Close();
                 dashboard.friends.Add(new User(email));
+                dbConnection.Close();
+                this.Close();
             }
             else
             {

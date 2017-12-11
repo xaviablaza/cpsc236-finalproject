@@ -61,18 +61,19 @@ namespace CPSC236FinalProject
                 paidBy = comboBox1.Text.ToString();
                 paidTo = dash.User.Email;
             }
-            values += "'" + paidBy + "'";
-            values += ",'" + paidTo + "'";
-            values += ",'" + billDesc+"'";
-            values += "," + billAmount;
-            values += ",0";
-            cmd.CommandText = "INSERT INTO bills (PAID_BY,PAID_TO,DESC,AMOUNT,SETTLED) VALUES ("+values+");";
+            values += "'" + paidBy + "'"; // Email of the person who paid this bill
+            values += ",'" + paidTo + "'"; // Email of the person who needs to pay
+            values += ",'" + billDesc+"'"; // The Bill Description
+            values += "," + billAmount; // The Bill Amount
+            values += ",0"; // Not Accepted
+            values += ",0"; // Not Settled
+            cmd.CommandText = "INSERT INTO bills (PAID_BY,PAID_TO,DESC,AMOUNT,ACCEPTED,SETTLED) VALUES ("+values+");";
             cmd.ExecuteNonQuery();
-            this.Close();
             float amount = 0;
             float.TryParse(billAmount, out amount);
-            dash.bills.Add(new Bill(paidBy, paidTo, billDesc, amount));
+            dash.bills.Add(new Bill(dbConnection.LastInsertRowId, paidBy, paidTo, billDesc, amount, false, false));
             dbConnection.Close();
+            this.Close();
         }
     }
 }

@@ -25,7 +25,21 @@ namespace CPSC236FinalProject
                                         Id       INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
                                         NAME     NVARCHAR(2048) NOT NULL,
                                         EMAIL    VARCHAR(255) NOT NULL,
-                                        PASSWORD VARCHAR(255) NOT NULL);";
+                                        PASSWORD VARCHAR(255) NOT NULL);
+                                        CREATE TABLE IF NOT EXISTS
+                                        bills (
+                                        Id        INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                                        PAID_BY   VARCHAR(255) NOT NULL,
+                                        PAID_TO   VARCHAR(255) NOT NULL,
+                                        DESC      VARCHAR(255) NOT NULL,
+                                        AMOUNT    DECIMAL(8,2) NOT NULL,
+                                        ACCEPTED  BOOLEAN NOT NULL,
+                                        SETTLED   BOOLEAN NOT NULL);
+                                        CREATE TABLE IF NOT EXISTS
+                                        friends (
+                                        Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                                        friend1 VARCHAR(255) NOT NULL,
+                                        friend2 VARCHAR(255) NOT NULL);";
             createTables.ExecuteNonQuery();
             dbConnection.Close();
         }

@@ -30,14 +30,11 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.friendsListBox = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.balanceListBox = new System.Windows.Forms.ListBox();
             this.fullName = new System.Windows.Forms.Label();
             this.addBillBtn = new System.Windows.Forms.Button();
             this.billsListBox = new System.Windows.Forms.ListBox();
             this.button2 = new System.Windows.Forms.Button();
             this.viewBillBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -59,25 +56,6 @@
             this.friendsListBox.Size = new System.Drawing.Size(159, 368);
             this.friendsListBox.TabIndex = 1;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(526, 25);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Your Balance";
-            // 
-            // balanceListBox
-            // 
-            this.balanceListBox.FormattingEnabled = true;
-            this.balanceListBox.Location = new System.Drawing.Point(529, 51);
-            this.balanceListBox.Margin = new System.Windows.Forms.Padding(2);
-            this.balanceListBox.Name = "balanceListBox";
-            this.balanceListBox.Size = new System.Drawing.Size(191, 368);
-            this.balanceListBox.TabIndex = 3;
-            // 
             // fullName
             // 
             this.fullName.AutoSize = true;
@@ -90,7 +68,7 @@
             // 
             // addBillBtn
             // 
-            this.addBillBtn.Location = new System.Drawing.Point(281, 18);
+            this.addBillBtn.Location = new System.Drawing.Point(597, 19);
             this.addBillBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addBillBtn.Name = "addBillBtn";
             this.addBillBtn.Size = new System.Drawing.Size(59, 25);
@@ -105,7 +83,7 @@
             this.billsListBox.Location = new System.Drawing.Point(189, 51);
             this.billsListBox.Margin = new System.Windows.Forms.Padding(2);
             this.billsListBox.Name = "billsListBox";
-            this.billsListBox.Size = new System.Drawing.Size(320, 368);
+            this.billsListBox.Size = new System.Drawing.Size(546, 368);
             this.billsListBox.TabIndex = 6;
             // 
             // button2
@@ -121,7 +99,7 @@
             // 
             // viewBillBtn
             // 
-            this.viewBillBtn.Location = new System.Drawing.Point(354, 19);
+            this.viewBillBtn.Location = new System.Drawing.Point(660, 19);
             this.viewBillBtn.Margin = new System.Windows.Forms.Padding(2);
             this.viewBillBtn.Name = "viewBillBtn";
             this.viewBillBtn.Size = new System.Drawing.Size(75, 25);
@@ -130,28 +108,16 @@
             this.viewBillBtn.UseVisualStyleBackColor = true;
             this.viewBillBtn.Click += new System.EventHandler(this.viewBillBtn_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(434, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(746, 441);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.viewBillBtn);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.billsListBox);
             this.Controls.Add(this.addBillBtn);
             this.Controls.Add(this.fullName);
-            this.Controls.Add(this.balanceListBox);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.friendsListBox);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -166,13 +132,10 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox friendsListBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox balanceListBox;
         private System.Windows.Forms.Label fullName;
         private System.Windows.Forms.Button addBillBtn;
         private System.Windows.Forms.ListBox billsListBox;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button viewBillBtn;
-        private System.Windows.Forms.Button button1;
     }
 }

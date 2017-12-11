@@ -1,6 +1,6 @@
 ﻿namespace CPSC236FinalProject
 {
-    partial class AddFriend2
+    partial class AddFriend
     {
         /// <summary>
         /// Required designer variable.

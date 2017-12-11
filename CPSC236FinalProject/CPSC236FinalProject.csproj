@@ -69,11 +69,11 @@
     <Compile Include="AddBillPage.Designer.cs">
       <DependentUpon>AddBillPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddFriend2.cs">
+    <Compile Include="AddFriend.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddFriend2.Designer.cs">
-      <DependentUpon>AddFriend2.cs</DependentUpon>
+    <Compile Include="AddFriend.Designer.cs">
+      <DependentUpon>AddFriend.cs</DependentUpon>
     </Compile>
     <Compile Include="Bill.cs" />
     <Compile Include="ConfirmBill.cs">
@@ -106,8 +106,8 @@
     <EmbeddedResource Include="AddBillPage.resx">
       <DependentUpon>AddBillPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddFriend2.resx">
-      <DependentUpon>AddFriend2.cs</DependentUpon>
+    <EmbeddedResource Include="AddFriend.resx">
+      <DependentUpon>AddFriend.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConfirmBill.resx">
       <DependentUpon>ConfirmBill.cs</DependentUpon>
